@@ -1,0 +1,11 @@
+# Versions exercised together during local release verification.
+# Not a cross-platform lockfile. Select the PyTorch CPU/CUDA build separately.
+numpy==1.26.4
+scipy==1.15.3
+torch==2.5.1
+pyarrow==25.0.1
+pandas==2.3.3
+matplotlib==3.10.8
+sionna-rt==1.2.1
+mitsuba==3.7.1
+drjit==1.2.0

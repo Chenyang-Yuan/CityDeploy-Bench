@@ -1,0 +1,25 @@
+{
+  "schema_version": "citydeploy.material-profile.v1",
+  "name": "urban_materials",
+  "intended_frequency_hz": 3650000000.0,
+  "assignment_kind": "semantic_to_radio_material_prior",
+  "materials": {
+    "ground": "mat-itu_medium_dry_ground",
+    "empty_land": "mat-itu_medium_dry_ground",
+    "road": "mat-itu_concrete",
+    "water": "mat-itu_wet_ground",
+    "green": "mat-itu_medium_dry_ground",
+    "obstacle": "mat-itu_concrete",
+    "rooftop": "mat-itu_concrete",
+    "wall": "mat-itu_concrete"
+  },
+  "provenance": {
+    "electromagnetic_model": "Sionna built-in ITU radio-material models based on ITU-R P.2040",
+    "itu_recommendation": "https://www.itu.int/rec/R-REC-P.2040/en"
+  },
+  "limitations": [
+    "OSM tags do not measure facade, roof, asphalt, soil-moisture, or vegetation electromagnetic properties.",
+    "Road=concrete and water=wet-ground are explicit compatibility proxies for Sionna 1.2.1, not identified physical composition.",
+    "Material sensitivity profiles and external or field validation are required before physical-verification claims."
+  ]
+}

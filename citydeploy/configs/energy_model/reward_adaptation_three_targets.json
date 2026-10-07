@@ -1,0 +1,53 @@
+{
+  "schema_version": "citydeploy.reward-adaptation-plan.v1",
+  "dataset_root": "datasets/raytracing/reward_adaptation_targets",
+  "scene_root": "datasets/scenes",
+  "output_root": "outputs/adaptation",
+  "seed": 42,
+  "adaptation_samples_per_target": 990,
+  "evaluation_samples_per_target": 200,
+  "fewshot_fraction": 0.3,
+  "fewshot_epochs": 30,
+  "in_distribution_epochs": 70,
+  "batch_size": 32,
+  "num_workers": 0,
+  "weight_decay": 1e-05,
+  "gradient_clip": 5.0,
+  "nri_kl_weight": 0.0001,
+  "ranking_margin": 0.02,
+  "ranking_epsilon": 0.0001,
+  "hpem_loss_weights": {
+    "energy": 1.0,
+    "ranking": 0.25,
+    "auxiliary": 0.25
+  },
+  "learning_rates": {
+    "hypergraph_potential": 3e-05,
+    "reward_predictor": 1e-05,
+    "interaction_network": 1e-05,
+    "nri": 1e-05
+  },
+  "targets": [
+    {
+      "scene": "paris_11",
+      "size_m": 128,
+      "num_tx": 2
+    },
+    {
+      "scene": "new_york_12",
+      "size_m": 256,
+      "num_tx": 4
+    },
+    {
+      "scene": "tokyo_01",
+      "size_m": 512,
+      "num_tx": 8
+    }
+  ],
+  "base_checkpoints": {
+    "hypergraph_potential": "models/hpem/checkpoint_best.pt",
+    "reward_predictor": "models/regressor/checkpoint_best.pt",
+    "interaction_network": "models/in/checkpoint_best.pt",
+    "nri": "models/nri/checkpoint_best.pt"
+  }
+}

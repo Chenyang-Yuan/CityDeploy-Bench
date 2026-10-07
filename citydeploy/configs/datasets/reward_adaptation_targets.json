@@ -1,0 +1,73 @@
+{
+  "schema_version": "citydeploy.dataset-plan.v4",
+  "dataset_id": "reward_adaptation_targets",
+  "scenes_root": "datasets/scenes",
+  "output_root": "datasets/raytracing/reward_adaptation_targets",
+  "rf_profile": "configs/rf/urban_3p65ghz.json",
+  "scenes": [
+    "paris_11",
+    "new_york_12",
+    "tokyo_01"
+  ],
+  "num_tx_values": [
+    2,
+    4,
+    8
+  ],
+  "master_pool_size": 8,
+  "master_pools_per_scene": 1200,
+  "scene_size_profiles": {
+    "128x128": {
+      "num_tx_values": [
+        2
+      ],
+      "master_pool_size": 2,
+      "master_pools_per_scene": 1200
+    },
+    "256x256": {
+      "num_tx_values": [
+        4
+      ],
+      "master_pool_size": 4,
+      "master_pools_per_scene": 1200
+    },
+    "512x512": {
+      "num_tx_values": [
+        8
+      ],
+      "master_pool_size": 8,
+      "master_pools_per_scene": 1200
+    }
+  },
+  "subsets_per_cardinality": 1,
+  "hypergraph_subsets_per_family": {},
+  "sampling": {
+    "seed": 424242,
+    "minimum_tx_distance_m": 20.0,
+    "strategies": {
+      "uniform": 0.5,
+      "maximin": 0.3,
+      "clustered": 0.2
+    }
+  },
+  "evaluation_policy": "road_only",
+  "split": {
+    "unit": "overlapping_geographic_group",
+    "seed": 424242,
+    "train_fraction": 0.34,
+    "validation_fraction": 0.33,
+    "test_fraction": 0.33,
+    "scene_assignments": {
+      "paris_11": "train",
+      "new_york_12": "validation",
+      "tokyo_01": "test"
+    }
+  },
+  "storage": {
+    "parquet_rows_per_shard": 2048,
+    "parquet_row_group_size": 512,
+    "compression": "zstd",
+    "rich_radio_map_fraction": 0.0,
+    "per_tx_path_gain_fraction": 0.0
+  }
+}

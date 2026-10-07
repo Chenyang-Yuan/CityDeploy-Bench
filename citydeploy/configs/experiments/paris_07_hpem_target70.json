@@ -1,0 +1,23 @@
+{
+  "scene": "paris_07",
+  "checkpoint": "models/hpem/checkpoint_best.pt",
+  "scene_root": "datasets/scenes",
+  "rf_profile": "configs/rf/urban_3p65ghz.json",
+  "methods_config": "configs/samplers/paris_07_hpem_target_coverage.json",
+  "output_root": "outputs/target_coverage",
+  "target_joint_coverage": 0.7,
+  "min_num_tx": 2,
+  "max_num_tx": 9,
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82
+  ],
+  "min_tx_distance_m": 20.0,
+  "nondeployable_weight": 10.0,
+  "minimum_distance_weight": 10.0,
+  "device": "cuda",
+  "ray_device": "gpu"
+}

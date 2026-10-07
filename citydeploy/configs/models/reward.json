@@ -1,0 +1,26 @@
+{
+  "module": "energy_model.train_reward",
+  "training": {
+    "batch_size": 32,
+    "epochs": 100,
+    "learning_rate": 0.0001,
+    "weight_decay": 1e-05,
+    "max_num_tx": 9,
+    "dropout": 0.2,
+    "patience": 15,
+    "min_delta": 1e-05,
+    "gradient_clip": 5.0,
+    "num_workers": 0,
+    "seed": 42,
+    "device": "cuda",
+    "max_samples": 0
+  },
+  "architecture_reference": {
+    "scene_channels": 11,
+    "scene_feature_dim": 96,
+    "tx_hidden_dim": 128,
+    "head_hidden_dim": 256,
+    "max_num_tx": 9,
+    "dropout": 0.2
+  }
+}

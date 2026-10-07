@@ -1,0 +1,65 @@
+{
+  "schema_version": "citydeploy.manual-deployment.urban-road.v1",
+  "description": "Interactive 3.65 GHz UMi road-domain manual deployment",
+  "radio": {
+    "frequency_hz": 3650000000.0,
+    "bandwidth_hz": 20000000.0,
+    "subcarrier_spacing_hz": 30000.0,
+    "num_resource_blocks": 51,
+    "subcarriers_per_resource_block": 12,
+    "ssb_power_offset_db": 0.0,
+    "tx_power_dbm": 24.0,
+    "tx_height_m": 10.0,
+    "rx_height_m": 1.5,
+    "noise_figure_db": 7.0,
+    "antenna_pattern": "iso",
+    "polarization": "V"
+  },
+  "ray_tracing": {
+    "max_depth": 5,
+    "cell_size_m": [
+      1.0,
+      1.0
+    ],
+    "samples_per_tx": 5000000,
+    "use_planar": true,
+    "line_of_sight": true,
+    "specular_reflection": true,
+    "diffuse_reflection": true,
+    "refraction": true,
+    "diffraction": true,
+    "edge_diffraction": true,
+    "seed": 42
+  },
+  "diffuse_scattering_coefficients": {
+    "concrete": 0.3,
+    "medium_dry_ground": 0.1,
+    "wet_ground": 0.05
+  },
+  "throughput": {
+    "implementation_efficiency": 0.65,
+    "resource_share": 0.5,
+    "max_spectral_efficiency_bps_hz": 6.0
+  },
+  "coverage_thresholds": {
+    "pathloss_db_max": 106.0,
+    "ss_rsrp_dbm_min": -110.0,
+    "sinr_db_min": 5.0,
+    "effective_throughput_mbps_min": 10.0,
+    "joint_coverage_target": 0.9
+  },
+  "deployment": {
+    "candidate_policy": "road_only",
+    "evaluation_policy": "road_only",
+    "candidate_grid_m": [
+      1.0,
+      1.0
+    ],
+    "minimum_tx_distance_m": 20.0,
+    "remove_click_radius_m": 4.0
+  },
+  "visualization": {
+    "colormap": "turbo",
+    "dpi": 220
+  }
+}

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "citydeploy-bench"
+version = "0.1.0"
+description = "Physics-grounded spatial set planning for multi-transmitter deployment"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+license = {text = "MIT for first-party code; CC-BY-NC-4.0 for specified derived components. See THIRD_PARTY_NOTICES.md."}
+dependencies = [
+  "numpy>=1.26,<2", "scipy>=1.13,<1.16", "torch>=2.5,<2.6",
+  "pyarrow>=18,<26", "pandas>=2.2,<3", "matplotlib>=3.8,<3.11",
+  "Pillow>=10,<12",
+]
+
+[project.optional-dependencies]
+radio = ["sionna-rt==1.2.1", "mitsuba==3.7.1", "drjit==1.2.0"]
+scene = [
+  "requests>=2.32,<3", "pyproj>=3.6,<4", "shapely>=2,<3",
+  "rasterio>=1.4,<2", "geopandas>=1.1,<2", "osmnx>=2.0,<3",
+  "trimesh>=4.4,<5", "open3d==0.18.0", "pyvista>=0.43,<0.44",
+  "triangle", "tqdm>=4.66,<5", "pooch>=1.8,<2", "importlib-resources>=6,<7",
+]
+dev = ["build>=1,<2"]
+
+[project.scripts]
+citydeploy = "citydeploy.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["citydeploy*", "energy_model*", "samplers*", "dataset_builder*", "scene_builder*", "radio_backend*", "manual_deployment*", "visualization*", "examples*", "scripts*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+citydeploy = ["configs/**/*.json"]
+manual_deployment = ["config.json"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "LICENSES/*"]

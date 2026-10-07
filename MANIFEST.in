@@ -1,0 +1,6 @@
+include README.md LICENSE THIRD_PARTY_NOTICES.md CITATION.cff
+include environment.yml constraints-tested.txt
+recursive-include docs *.md *.png
+recursive-include LICENSES *
+recursive-include citydeploy/configs *.json
+include manual_deployment/config.json

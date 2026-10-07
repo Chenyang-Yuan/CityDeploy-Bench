@@ -1,0 +1,48 @@
+{
+  "module": "energy_model.train",
+  "training": {
+    "orders": "1,2,3,4",
+    "max_num_tx": 9,
+    "batch_size": 32,
+    "epochs": 100,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "validation_ratio": 0.15,
+    "test_ratio": 0.15,
+    "seed": 42,
+    "num_workers": 0,
+    "device": "cuda",
+    "w_energy": 1.0,
+    "w_ranking": 0.25,
+    "w_aux": 0.25,
+    "ranking_margin": 0.02,
+    "ranking_epsilon": 0.0001,
+    "gradient_clip": 5.0,
+    "max_samples": 0
+  },
+  "architecture_reference": {
+    "scene_channels": 11,
+    "scene_dim": 128,
+    "local_dim": 48,
+    "hidden_dim": 192,
+    "hyper_hidden_dim": 160,
+    "orders": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "max_num_tx": 9,
+    "fourier_frequencies": [
+      1.0,
+      2.0,
+      4.0
+    ],
+    "order_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}

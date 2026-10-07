@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite CityDeploy-Bench when using this software. Publication metadata will be updated with the archival paper."
+type: software
+title: "CityDeploy-Bench: Benchmarking Physics-Grounded Spatial Set Planning for Multi-Transmitter Network Deployment"
+authors:
+  - name: "CityDeploy-Bench contributors"
+version: 0.1.0
+abstract: "A benchmark separating learned utility representation, deployment search, and physical verification."

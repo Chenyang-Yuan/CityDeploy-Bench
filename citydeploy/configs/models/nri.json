@@ -1,0 +1,36 @@
+{
+  "module": "energy_model.train_relational",
+  "training": {
+    "model": "nri",
+    "batch_size": 32,
+    "epochs": 100,
+    "learning_rate": 0.0001,
+    "weight_decay": 1e-05,
+    "max_num_tx": 9,
+    "dropout": 0.2,
+    "edge_types": 4,
+    "gumbel_temperature": 0.5,
+    "nri_kl_weight": 0.0001,
+    "patience": 15,
+    "min_delta": 1e-05,
+    "gradient_clip": 5.0,
+    "num_workers": 0,
+    "seed": 42,
+    "device": "cuda",
+    "max_samples": 0
+  },
+  "architecture_reference": {
+    "scene_channels": 11,
+    "scene_dim": 96,
+    "local_dim": 48,
+    "node_dim": 128,
+    "relation_dim": 128,
+    "hidden_dim": 192,
+    "max_num_tx": 9,
+    "dropout": 0.2,
+    "edge_types": 4,
+    "gumbel_temperature": 0.5,
+    "hard_edges": false,
+    "symmetric_edges": true
+  }
+}

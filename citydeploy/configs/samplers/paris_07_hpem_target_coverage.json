@@ -1,0 +1,120 @@
+{
+  "budget_policy": "method_specific_parameters_unequal_reward_evaluation_budgets",
+  "methods": [
+    {
+      "sampler": "diffusion",
+      "num_particles": 100,
+      "config": {
+        "steps": 100,
+        "mc_samples": 10,
+        "beta": 1,
+        "sigma_max": 0.75,
+        "sigma_min": 0.05,
+        "antithetic": true,
+        "boundary": "reflect",
+        "stochastic_final_step": false
+      }
+    },
+    {
+      "sampler": "smc_gaussian",
+      "num_particles": 50,
+      "config": {
+        "steps": 30,
+        "beta": 1,
+        "ess_threshold": 0.5,
+        "proposal_scale_start": 0.45,
+        "proposal_scale_end": 0.08,
+        "mutation_steps": 1,
+        "tempering_power": 1,
+        "kernel": "gaussian"
+      }
+    },
+    {
+      "sampler": "smc_langevin",
+      "num_particles": 50,
+      "config": {
+        "steps": 30,
+        "beta": 1,
+        "ess_threshold": 0.5,
+        "proposal_scale_start": 0.3,
+        "proposal_scale_end": 0.05,
+        "mutation_steps": 1,
+        "tempering_power": 1,
+        "kernel": "langevin"
+      }
+    },
+    {
+      "sampler": "nuts",
+      "num_particles": 5,
+      "config": {
+        "warmup_steps": 5,
+        "sample_steps": 5,
+        "beta": 1,
+        "initial_step_size": 0.05,
+        "target_acceptance": 0.6,
+        "max_tree_depth": 2,
+        "divergence_threshold": 1000,
+        "adapt_step_size": true
+      }
+    },
+    {
+      "sampler": "br_snis",
+      "num_particles": 3,
+      "config": {
+        "rounds": 2,
+        "proposal_particles": 2,
+        "beta": 1
+      }
+    },
+    {
+      "sampler": "greedy",
+      "num_particles": 5,
+      "config": {
+        "candidate_pool": 5,
+        "refinement_rounds": 0,
+        "evaluation_batch_size": 512
+      }
+    },
+    {
+      "sampler": "pso",
+      "num_particles": 2,
+      "config": {
+        "steps": 10,
+        "inertia_start": 0.1,
+        "inertia_end": 0.1,
+        "cognitive": 0.49618,
+        "social": 0.49618,
+        "velocity_limit": 0.1,
+        "topology": "global"
+      }
+    },
+    {
+      "sampler": "ga",
+      "num_particles": 2,
+      "config": {
+        "generations": 10,
+        "tournament_size": 2,
+        "elite_fraction": 0.1,
+        "crossover_probability": 0.01,
+        "mutation_probability": 0.01,
+        "crossover_eta": 20,
+        "mutation_eta": 20
+      }
+    },
+    {
+      "sampler": "turbo",
+      "num_particles": 2,
+      "config": {
+        "evaluation_budget": 5,
+        "initial_points": 2,
+        "batch_size": 2,
+        "candidate_pool": 3,
+        "gp_training_steps": 2,
+        "length_init": 0.8,
+        "length_min": 0.0078125,
+        "length_max": 1.6,
+        "success_tolerance": 3
+      }
+    }
+  ]
+}
