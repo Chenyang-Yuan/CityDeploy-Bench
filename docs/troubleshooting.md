@@ -1,5 +1,17 @@
 # Troubleshooting
 
+## Platform validation
+
+The initial source release passed the Linux automated unit tests, synthetic
+model/sampler smoke test and package build. Its Windows CI run passed 87 of 88
+unit tests. The remaining test compares a resolved temporary-directory path to
+its Windows short-name alias. The two spellings can identify the same directory,
+but that assertion compares path spellings. This is a known test portability
+limitation, not evidence of a failed model computation. Windows is not currently
+advertised as fully CI-validated; Linux is the validated automated baseline.
+
+## Common issues
+
 | Symptom | Check |
 | --- | --- |
 | `citydeploy` is not found | Activate the environment used for installation; `python -m citydeploy` is equivalent. |

@@ -24,7 +24,9 @@
 - **Plan** unordered transmitter sets with nine sampling and optimization methods.
 - **Verify** spatial radio maps and joint coverage, with search budgets and repeated-seed results recorded separately.
 
-> **Release status.** This repository contains source code, configurations, tests, and a self-contained synthetic tutorial. The companion [CityDeploy-Data repository on Hugging Face](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data) currently hosts a **private preview**: 18 example deployments and a 60-scene catalog. Access requires authorization; visitors without access may see a not-found page. The full training corpus, scene packages, Radio Maps, and pretrained weights are **not included in this code release or that preview**. Corpus statistics below describe the manuscript's benchmark, not bundled files.
+> **Release status.** This repository contains source code, configurations, tests, and a self-contained synthetic tutorial. The companion [CityDeploy-Data repository on Hugging Face](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data) distributes the full archived corpus in separate download layers: deployment labels and cached scene tensors, portable scene packages, and optional Radio Maps. Check its [transfer status](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data/blob/main/metadata/release_status.json) before requesting all spatial archives. No datasets or pretrained weights are bundled in this code repository. Original simulation outputs are for noncommercial research; geographic layers retain their upstream terms.
+
+**Platform validation:** Linux automated tests, the synthetic smoke test and package build passed for the initial source release. Windows has one known path-alias comparison failure in its test suite; it is not advertised as fully CI-validated. See [platform notes](docs/troubleshooting.md#platform-validation).
 
 ## Quickstart
 
@@ -90,7 +92,7 @@ These are task-adapted implementations; [method specifications](docs/methods.md)
 
 Supply compatible scene packages and a deployment dataset, or construct your own with the [scene and data guide](docs/scenes.md).
 
-**Dataset entry:** [CityDeploy-Data on Hugging Face](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data). The current preview is for schema inspection, not a drop-in training dataset. See [data availability and loading](docs/data.md#dataset-availability) before running the full-data commands below. The synthetic quickstart above works without access to the private dataset.
+**Dataset entry:** [CityDeploy-Data on Hugging Face](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data). Download the lightweight core for model training; add scene geometry for ray tracing and archived Radio Maps only when needed. See [data availability and loading](docs/data.md#dataset-availability). The synthetic quickstart above works without downloading the dataset.
 
 The default workspace layout is:
 

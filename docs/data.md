@@ -4,21 +4,35 @@
 
 The companion dataset is hosted at
 [Chenyang-Yuan/CityDeploy-Data on Hugging Face](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data).
-It is currently a **private preview**, containing 18 example deployment rows and a
-60-scene catalog. Authorized users can inspect the Dataset Card and its loading
-examples. Visitors without access may see a not-found page; the link does not
-imply public availability.
+The complete archived corpus is distributed in layers. Consult the Dataset Card's
+transfer-status link while the initial large upload is in progress. The lightweight
+`core/urban_multicity` includes all 54,193 scalar deployment rows, family memberships,
+fixed splits, RF contracts and cached model-input tensors. Training does not require
+the optional scene meshes or the approximately 115 GB of archived spatial maps.
 
-The preview does not include the complete training splits, cached scene tensors,
-ray-tracing scene packages, Radio Maps or pretrained weights. It is not a drop-in
-input for `citydeploy train`, `citydeploy evaluate`, or the complete data validator.
-Use `citydeploy demo --all-samplers` for the self-contained tutorial while the
-full data release is being prepared.
+The dataset provides `examples/download_dataset.py`. After downloading that script
+and installing its requirements, materialize the core with:
 
-The reference corpus has 54,193 unique deployments with scalar labels; 36,599 have
-archived Radio Maps. Missing spatial outputs do not mean zero coverage. Full-release
-download instructions and integrity metadata will accompany the final corpus.
-Dataset licensing is separate from the code license.
+```console
+python examples/download_dataset.py --destination citydeploy_data
+citydeploy train --model hpem --dataset-root citydeploy_data/core/urban_multicity --scene-root citydeploy_data/scenes --device cuda
+```
+
+Add `--with-scenes --scenes london_01` for that portable scene, or
+`--with-radio-maps --scenes london_01` for its archived maps. Omitting the scene
+filter requests all assets in the selected layer. `--adaptation` downloads the
+separate 3,590-row target-adaptation corpus; never merge it into primary training.
+The downloader records a single Hub revision and checks payload hashes.
+
+Only 36,599 primary deployments have archived Radio Maps. Missing maps do not mean
+zero coverage, and no maps were synthesized during export. The full validator
+requires referenced maps to have been materialized; core-only training does not.
+No pretrained weights are included. Use `citydeploy demo --all-samplers` for a
+self-contained tutorial without external data.
+
+Original simulation outputs are restricted to noncommercial research. OSM-derived
+geographic layers retain ODbL-1.0; the code's MIT license does not license the data.
+Read the dataset's component-specific license before reuse.
 
 ## Scene inputs
 
