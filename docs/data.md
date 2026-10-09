@@ -4,8 +4,9 @@
 
 The companion dataset is hosted at
 [Chenyang-Yuan/CityDeploy-Data on Hugging Face](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data).
-The complete archived corpus is distributed in layers. Consult the Dataset Card's
-transfer-status link while the initial large upload is in progress. The lightweight
+The complete archived corpus is uploaded and verified, and is distributed in layers.
+See the [release verification](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data/blob/main/metadata/release_status.json).
+The lightweight
 `core/urban_multicity` includes all 54,193 scalar deployment rows, family memberships,
 fixed splits, RF contracts and cached model-input tensors. Training does not require
 the optional scene meshes or the approximately 115 GB of archived spatial maps.

@@ -6,6 +6,12 @@
 </p>
 
 <p align="center">
+  Chenyang Yuan &nbsp;·&nbsp; Xiaoyuan Cheng<br>
+  <a href="https://arxiv.org/abs/2610.11065">Paper · arXiv:2610.11065</a> &nbsp;·&nbsp;
+  <a href="https://arxiv.org/pdf/2610.11065">PDF</a>
+</p>
+
+<p align="center">
   <a href="#quickstart">Quickstart</a> &nbsp;·&nbsp;
   <a href="#benchmark">Benchmark</a> &nbsp;·&nbsp;
   <a href="https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data">Dataset</a> &nbsp;·&nbsp;
@@ -24,7 +30,7 @@
 - **Plan** unordered transmitter sets with nine sampling and optimization methods.
 - **Verify** spatial radio maps and joint coverage, with search budgets and repeated-seed results recorded separately.
 
-> **Release status.** This repository contains source code, configurations, tests, and a self-contained synthetic tutorial. The companion [CityDeploy-Data repository on Hugging Face](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data) distributes the full archived corpus in separate download layers: deployment labels and cached scene tensors, portable scene packages, and optional Radio Maps. Check its [transfer status](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data/blob/main/metadata/release_status.json) before requesting all spatial archives. No datasets or pretrained weights are bundled in this code repository. Original simulation outputs are for noncommercial research; geographic layers retain their upstream terms.
+> **Release status.** This repository contains source code, configurations, tests, and a self-contained synthetic tutorial. The companion [CityDeploy-Data repository on Hugging Face](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data) is fully uploaded and verified, with separate download layers for deployment labels and cached scene tensors, 67 portable scene packages, and 36,599 archived Radio Maps. See the [release verification](https://huggingface.co/datasets/Chenyang-Yuan/CityDeploy-Data/blob/main/metadata/release_status.json). No datasets or pretrained weights are bundled in this code repository. Original simulation outputs are for noncommercial research; geographic layers retain their upstream terms.
 
 **Platform validation:** Linux automated tests, the synthetic smoke test and package build passed for the initial source release. Windows has one known path-alias comparison failure in its test suite; it is not advertised as fully CI-validated. See [platform notes](docs/troubleshooting.md#platform-validation).
 
@@ -156,7 +162,21 @@ Paths resolve relative to the current working directory. Use `citydeploy --works
 
 ## Citation and license
 
-Software citation metadata are available in [CITATION.cff](CITATION.cff). Publication metadata and persistent links will be added with the public paper record.
+If you use CityDeploy-Bench or CityDeploy-Data in your research, please cite our [paper](https://arxiv.org/abs/2610.11065):
+
+```bibtex
+@misc{yuan2026citydeploybench,
+  title         = {CityDeploy-Bench: Benchmarking Physics-Grounded Spatial Set Planning for Multi-Transmitter Network Deployment},
+  author        = {Chenyang Yuan and Xiaoyuan Cheng},
+  year          = {2026},
+  eprint        = {2610.11065},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2610.11065}
+}
+```
+
+Machine-readable citation metadata, including the preferred paper citation, are available in [CITATION.cff](CITATION.cff).
 
 | Component | Terms |
 | --- | --- |
