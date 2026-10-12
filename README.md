@@ -6,7 +6,8 @@
 </p>
 
 <p align="center">
-  Chenyang Yuan &nbsp;·&nbsp; Xiaoyuan Cheng<br>
+  Chenyang Yuan<sup>*</sup> &nbsp;·&nbsp; Xiaoyuan Cheng<sup>*</sup><br>
+  <em><sup>*</sup>Equal contribution; co-first authors.</em><br>
   <a href="https://arxiv.org/abs/2610.11065">Paper · arXiv:2610.11065</a> &nbsp;·&nbsp;
   <a href="https://arxiv.org/pdf/2610.11065">PDF</a>
 </p>
